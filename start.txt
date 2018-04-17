@@ -1,0 +1,26 @@
+heres how to setup the application:
+
+
+Install mysql:
+
+$ brew install mysql
+$ brew tap homebrew/services
+$ brew services start mysql
+
+Reset root password:
+
+$ brew services stop mysql
+$ rm -rf /usr/local/var/mysql
+$ mysqld --initialize 
+$ brew services start mysql
+$ mysql -u root -p
+
+mysql>ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass'
+mysql>CREATE USER 'youser'@'%' IDENTIFIED BY 'yoimcool';
+mysql>GRANT ALL PRIVILEGES ON *.* TO 'youser'@'%' WITH GRANT OPTION;
+mysql>CREATE DATABASE yo;
+
+Test application:
+
+$ curl -v 'localhost:8080/v1/user/add?name=First&email=someemail@someemailprovider.com'
+$ curl -v 'localhost:8080/v1/user/list'
