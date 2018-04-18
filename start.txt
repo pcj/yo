@@ -1,5 +1,8 @@
-heres how to setup the application:
+Hey guys, Here's the application I've been working on all summer. 
+It's running pretty good on my machine. Hope you find it useful. Also, remember
+that I'm looking for a full-time job next fall, really loved working with you guys. 
 
+This should be enough to get you started.
 
 Install mysql:
 
@@ -19,6 +22,9 @@ mysql>ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass'
 mysql>CREATE USER 'youser'@'%' IDENTIFIED BY 'yoimcool';
 mysql>GRANT ALL PRIVILEGES ON *.* TO 'youser'@'%' WITH GRANT OPTION;
 mysql>CREATE DATABASE yo;
+
+Run the application
+$ mvn spring-boot:run
 
 Test application:
 
